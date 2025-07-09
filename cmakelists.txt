@@ -1,0 +1,38 @@
+# Set the minimum required version of CMake
+cmake_minimum_required (VERSION 3.20)
+
+# Set the project name and language
+project (Aimbot CXX)
+
+# Set the C++ standard to C++17
+set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# --- Find the necessary libraries ---
+
+# Find OpenCV
+# IMPORTANT: Replace "C:/dev/opencv/build" with the actual path to your OpenCV build folder
+set (OpenCV_DIR "D:/dev/opencv/build")
+find_package (OpenCV REQUIRED)
+
+# Find ONNX Runtime
+# IMPORTANT: Replace "C:/dev/onnxruntime" with the path to your ONNX Runtime folder
+set (ONNXRUNTIME_DIR "D:/dev/onnxruntime-win-x64-gpu-1.22.1(1)/onnxruntime-win-x64-gpu-1.22.1/lib")
+find_package (ONNXRuntime REQUIRED)
+
+
+
+# Add your C++ source file(s) to the executable
+add_executable (Aimbot main.cpp)
+
+# Link the libraries to your executable
+target_link_libraries (Aimbot PRIVATE
+    ${OpenCV_LIBS}
+    ${ONNXRUNTIME_LIBRARIES}
+)
+
+# Include the directories so the compiler can find the header files
+target_include_directories (Aimbot PRIVATE
+    ${OpenCV_INCLUDE_DIRS}
+    ${ONNXRUNTIME_INCLUDE_DIRS}
+)
