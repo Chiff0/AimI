@@ -6,7 +6,7 @@
 
 #pragma comment (lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
-#using namespace std
+using namespace std;
  
 ScreenCapture::ScreenCapture ()
 {
@@ -17,7 +17,7 @@ ScreenCapture::ScreenCapture ()
         D3D_FEATURE_LEVEL_10_1, 
         D3D_FEATURE_LEVEL_10_0, 
         D3D_FEATURE_LEVEL_9_1
-    }
+    };
 
     D3D_FEATURE_LEVEL feature_level_supported;
 

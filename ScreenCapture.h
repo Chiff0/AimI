@@ -22,8 +22,8 @@ private:
     IDXGIOutputDuplication* m_DeskDupl = nullptr;
     ID3D11Texture2D* m_StagingTexture = nullptr;
     
-    int width_ = 0;
-    int height_ = 0;
+    int m_Width = 0;
+    int m_Height = 0;
 
 };
 
